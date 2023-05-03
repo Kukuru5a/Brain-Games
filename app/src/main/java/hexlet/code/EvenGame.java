@@ -1,4 +1,5 @@
 package hexlet.code;
+
 import java.util.Scanner;
 
 import static hexlet.code.Engine.randonIntNum;
@@ -7,7 +8,7 @@ import static hexlet.code.Engine.randonIntNum;
 public class EvenGame {
 
 
-    public static void evenGame(){
+    public static void evenGame() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.print("Can I have your name? ");
@@ -30,11 +31,10 @@ public class EvenGame {
         int winCount = 0;
 
 
-
         // проверка первого числа на четность
-        if(firsNum % 2 == 0) {
+        if (firsNum % 2 == 0) {
             numChecker = "yes";
-        }else{
+        } else {
             numChecker = "no";
         }
         // Вопрос 1
@@ -54,9 +54,9 @@ public class EvenGame {
         System.out.print("Your answer: ");
         var answer2 = scanner.next();
 
-        if(secondNum % 2 == 0) {
+        if (secondNum % 2 == 0) {
             numChecker = "yes";
-        }else{
+        } else {
             numChecker = "no";
         }
 
@@ -76,9 +76,9 @@ public class EvenGame {
         System.out.print("Your answer: ");
         var answer3 = scanner.next();
 
-        if(thirdNum % 2 == 0) {
+        if (thirdNum % 2 == 0) {
             numChecker = "yes";
-        }else{
+        } else {
             numChecker = "no";
         }
 
@@ -94,7 +94,7 @@ public class EvenGame {
         }
         //* если ответ был дан верно 3 раза, игра завершается победой
         if (winCount == 3) {
-            System.out.println("Congratulations, " + userName);
+            System.out.println("Congratulations, " + userName + "!");
         }
     }
 }

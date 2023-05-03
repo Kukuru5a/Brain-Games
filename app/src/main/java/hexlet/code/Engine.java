@@ -28,14 +28,14 @@ public class Engine {
         return res;
     }
 
-    public static int randonIntNum () {
+    public static int randonIntNum() {
         double min = 0.0;
         double max = 10.0;
         Random ranNum = new Random();
         int randNum = ranNum.nextInt(1, 100); // генерируем число от 1 до 100
 
-        var requestedNumDouble = Math.random()*10;
-        var requestedNumInt = (int)requestedNumDouble; // генерируем число
+        var requestedNumDouble = Math.random() * 10;
+        var requestedNumInt = (int) requestedNumDouble; // генерируем число
         return randNum;
     }
 
@@ -63,8 +63,9 @@ public class Engine {
             Calc.calculator();
             scanner.close();
         }
-
     }
+
+
     // кор игр
     public static void gameCore() {
         Scanner scanner = new Scanner(System.in);
@@ -72,9 +73,14 @@ public class Engine {
         System.out.print("Can I have your name? ");
         var userName = scanner.next();
         System.out.print("Hello, " + userName + "!");
-        System.out.println("What is the result for the expression?");
+        System.out.println("Question?");
 
-        //генирируем первое число
+        //задается вопрос с примером
+        //ответ
+        var answer = scanner.next();
+        //далее в проверке каждой игры, если ответ правильный, мы прибавляем очко
+        var winCounter = 0;
+
 
     }
 }

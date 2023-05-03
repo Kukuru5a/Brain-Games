@@ -6,7 +6,7 @@ import static hexlet.code.Engine.expression;
 import static hexlet.code.Engine.randonIntNum;
 
 
-public class Calc{
+public class Calc {
 
 
     public static void calculator() {
@@ -37,7 +37,6 @@ public class Calc{
                 expressionRes1 = firstNum1 / secondNum1;
                 break;
         }
-
 
 
         System.out.println("Question: " + firstNum1 + " " + expression1 + " " + secondNum1);
@@ -145,7 +144,7 @@ public class Calc{
 
         //* если ответ был дан верно 3 раза, игра завершается победой
         if (winCount == 3) {
-            System.out.println("Congratulations, " + userName);
+            System.out.println("Congratulations, " + userName + "!");
         }
     }
 }
