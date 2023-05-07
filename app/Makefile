@@ -1,2 +1,2 @@
-run-dist: #запустит программу без конфигурации installDist
-	./build/install/app/bin/App
+run-dist: #helps out to run dist file through the terminal
+	./build/install/app/bin/app
