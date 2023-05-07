@@ -63,3 +63,23 @@
   </script>
 </body>
 </html>
+
+# Progression game
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="asciinema-player.css" />
+</head>
+<body>
+  <div id="player"></div>
+  <script src="asciinema-player.min.js"></script>
+  <script>
+    AsciinemaPlayer.create(
+      '583057.cast',
+      document.getElementById('player'),
+      { cols: 154, rows: 11 }
+    );
+  </script>
+</body>
+</html>
