@@ -83,3 +83,24 @@
   </script>
 </body>
 </html>
+
+
+# Prime game + full game observe
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="asciinema-player.css" />
+</head>
+<body>
+  <div id="player"></div>
+  <script src="asciinema-player.min.js"></script>
+  <script>
+    AsciinemaPlayer.create(
+      '583106.cast',
+      document.getElementById('player'),
+      { cols: 154, rows: 33 }
+    );
+  </script>
+</body>
+</html>
