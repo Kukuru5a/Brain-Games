@@ -1,5 +1,4 @@
 package hexlet.code.games;
-import java.util.Arrays;
 import java.util.Scanner;
 import static hexlet.code.Engine.userName;
 import static hexlet.code.Templates.*;
@@ -11,18 +10,17 @@ public class Progression {
     public static String TASK = "What number is missing in the progression?";
     public static void getProgression() {
         //генерируем прогрессию
-        String prog = progression();
+        String progression = progression();
         //модифицируем ее, заменяя рандомное число на '..'
-        var modifiedProg = missingElement(prog, index1);
+        var modifiedProg = missingElement(progression, index1);
 
         System.out.println(TASK);
         System.out.println("Question: " + modifiedProg);
         System.out.print("Your answer: ");
         int answer = scanner.nextInt();
 
-        var splitProg = prog.split(",");
+        var splitProg = progression.split(",");
 
-        //проверка первого примера
         if (Integer.toString(answer).equals(splitProg[index1].trim())) {
             System.out.println("Correct!");
         } else {
@@ -31,13 +29,13 @@ public class Progression {
             System.exit(0);
         }
 
-        var prog2 = progression();
-        var modifiedProg2 = missingElement(prog2, index2);
+        var progression2 = progression();
+        var modifiedProg2 = missingElement(progression2, index2);
 
         System.out.println("Question: " + modifiedProg2);
         System.out.print("Your answer: ");
         var answer2 = scanner.nextInt();
-        var splitProg2 = prog2.split(",");
+        var splitProg2 = progression2.split(",");
 
 
         if (Integer.toString(answer2).equals(splitProg2[index2].trim())) {

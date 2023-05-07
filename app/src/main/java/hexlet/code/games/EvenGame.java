@@ -16,7 +16,6 @@ public class EvenGame {
         System.out.print("Your answer: ");
         var answer = scanner.next();
 
-        // Вопрос 1
         if ((answer.equals(checker1))) {
             System.out.println("Correct!");
             System.out.println("Question:" + num2);

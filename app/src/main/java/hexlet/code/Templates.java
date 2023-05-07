@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import java.util.Scanner;
-
 import static hexlet.code.Utils.*;
 import static hexlet.code.Utils.getExpression;
 
@@ -13,7 +11,6 @@ public class Templates {
     public static String checker1 = isEven(num1);
     public static String checker2 = isEven(num2);
     public static String checker3 = isEven(num3);
-    public static Scanner scanner = new Scanner(System.in);
 
     //for calc
     public static int[] nums1 = {randonIntNum(), randonIntNum()};
@@ -36,7 +33,5 @@ public class Templates {
     public static int index1 = (int)(Math.random()*10);
     public static int index2 = (int)(Math.random()*10);
     public static int index3 = (int)(Math.random()*10);
-
-
 
 }

@@ -6,14 +6,12 @@ import java.util.Random;
 public class Utils {
     public static int numGenerator() {
         Random ranNum = new Random();
-        var numInt = ranNum.nextInt(0, 4);
-        return numInt;
+        return ranNum.nextInt(0, 4);
     }
 
     public static int randonIntNum() {
         Random ranNum = new Random();
-        int randomNum = ranNum.nextInt(1, 100); // генерируем число от 1 до 100
-        return randomNum;
+        return ranNum.nextInt(1, 100);
     }
 
     public static String expression() {
@@ -32,34 +30,23 @@ public class Utils {
 
     public static int getExpression(int num1, int num2, String expression){
 
-        var expressionRes = 0;
-
-        switch (expression) {
-            case "+":
-                expressionRes = num1 + num2;
-                break;
-            case "-":
-                expressionRes = num1 - num2;
-                break;
-            case "*":
-                expressionRes = num1 * num2;
-                break;
-            case "/":
-                expressionRes = num1 / num2;
-                break;
-        }
-        return expressionRes;
+        return switch (expression) {
+            case "+" -> num1 + num2;
+            case "-" -> num1 - num2;
+            case "*" -> num1 * num2;
+            case "/" -> num1 / num2;
+            default -> 0;
+        };
     }
     public static String isPrime(int n) {
         String res = "";
-        int m = 0;
-        int i = 0;
         int flag = 0;
-        m = n/2;
+        int m = n / 2;
         if (n == 0||n == 1) {
             res = "no";
         } else {
-            for (i = 2; i < m; i++) {
+
+            for (int i = 2; i < m; i++) {
                 if (n % i == 0) {
                     res = "no";
                     flag = 1;
@@ -86,7 +73,7 @@ public class Utils {
     }
 
     public static String isEven (int n) {
-        String res = "";
+        String res;
         if (n % 2 == 0) {
             res = "yes";
         } else {
@@ -105,7 +92,6 @@ public class Utils {
             elements[i] = start + diff * i;// i - element of progression
         }
         var str = Arrays.toString(elements);
-        var modifiedstr1 = str.trim().replace(',', ' ');
         return str.substring(4,str.length()-1);
     }
 
