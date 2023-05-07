@@ -97,9 +97,9 @@
   <script src="asciinema-player.min.js"></script>
   <script>
     AsciinemaPlayer.create(
-      '583106.cast',
+      '583118.cast',
       document.getElementById('player'),
-      { cols: 154, rows: 33 }
+      { cols: 154, rows: 8 }
     );
   </script>
 </body>
