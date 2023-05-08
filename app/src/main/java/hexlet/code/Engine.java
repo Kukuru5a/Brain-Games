@@ -16,41 +16,41 @@ public class Engine {
         var numChoice = scanner.next();
 
         if (numChoice.equals("1")) {
-            System.out.print("Can I have your name? ");
+            System.out.print("May I have your name? ");
             userName = scanner.next();
             System.out.println("Hello, " + userName + "!");
             scanner.close();
         }
         if (numChoice.equals("2")) {
-            System.out.print("Can I have your name? ");
+            System.out.print("May I have your name? ");
             userName = scanner.next();
             System.out.println("Hello, " + userName + "!");
             EvenGame.evenGame();
             scanner.close();
         }
         if (numChoice.equals("3")) {
-            System.out.print("Can I have your name? ");
+            System.out.print("May I have your name? ");
             userName = scanner.next();
             System.out.println("Hello, " + userName + "!");
             Calc.calculator();
             scanner.close();
         }
         if (numChoice.equals("4")) {
-            System.out.print("Can I have your name? ");
+            System.out.print("May I have your name? ");
             userName = scanner.next();
             System.out.println("Hello, " + userName + "!");
             GCD.getGCD();
             scanner.close();
         }
         if (numChoice.equals("5")) {
-            System.out.print("Can I have your name? ");
+            System.out.print("May I have your name? ");
             userName = scanner.next();
             System.out.println("Hello, " + userName + "!");
             Progression.getProgression();
             scanner.close();
         }
         if (numChoice.equals("6")) {
-            System.out.print("Can I have your name? ");
+            System.out.print("May I have your name? ");
             userName = scanner.next();
             System.out.println("Hello, " + userName + "!");
             Prime.isPrime();

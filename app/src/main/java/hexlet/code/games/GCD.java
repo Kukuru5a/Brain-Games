@@ -6,7 +6,7 @@ import static hexlet.code.Templates.*;
 
 public class GCD {
         public static Scanner scanner = new Scanner(System.in);
-        public static String TASK = "Find greatest common divisor of given numbers";
+        public static String TASK = "Find the greatest common divisor of given numbers.";
 
     public static void getGCD() {
         System.out.println(TASK);
@@ -18,8 +18,8 @@ public class GCD {
             System.out.println("Correct!");
         }
         if (!(Integer.parseInt(answer) == gcd1)) {
-            System.out.println("'" + answer + "'" + "is wrong answer ;(. Correct answer was " + "'" + gcd1 + "'");
-            System.out.println("Let's try again, " + userName);
+            System.out.println("'" + answer + "'" + "is wrong answer ;(. Correct answer was " + "'" + gcd1 + "'.");
+            System.out.println("Let's try again, " + userName + "!");
             System.exit(0);
         }
 
@@ -31,8 +31,8 @@ public class GCD {
             System.out.println("Correct!");
         }
         if (!(Integer.parseInt(answer2) == gcd2)) {
-            System.out.println("'" + answer2 + "'" + "is wrong answer ;(. Correct answer was " + gcd2);
-            System.out.println("Let's try again, " + userName);
+            System.out.println("'" + answer2 + "'" + "is wrong answer ;(. Correct answer was " + "'" + gcd2 + "'.");
+            System.out.println("Let's try again, " + userName + "!");
             System.exit(0);
         }
 
@@ -45,8 +45,8 @@ public class GCD {
             System.out.println("Congratulations, " + userName + "!");
         }
         if (!(Integer.parseInt(answer3) == gcd3)) {
-            System.out.println("'" + answer3 + "'" + "is wrong answer ;(. Correct answer was " + gcd3);
-            System.out.println("Let's try again, " + userName);
+            System.out.println("'" + answer3 + "'" + "is wrong answer ;(. Correct answer was " + "'" + gcd3 + "'.");
+            System.out.println("Let's try again, " + userName + "!");
             System.exit(0);
         }
     }

@@ -7,7 +7,7 @@ import static hexlet.code.games.Calc.scanner;
 import static hexlet.code.Templates.*;
 
 public class Prime {
-    static final String TASK = "Answer 'yes' if number is prime. Otherwise answer 'no'.";
+    static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static void isPrime() {
         System.out.println(TASK);
         System.out.println("Question: " + num1);
@@ -19,7 +19,8 @@ public class Prime {
         if (answer1.equals(checker)) {
             System.out.println("Correct!");
         } else {
-            System.out.println("'" + answer1 + "'" + " is wrong, correct answer is " + "'" + checker + "'");
+            System.out.println("'" + answer1 + "'" + " is wrong answer ;(. Correct answer was " + "'" + checker + "'.");
+            System.out.println("Let's try again, " + userName + "!");
             System.exit(0);
         }
 
@@ -32,7 +33,8 @@ public class Prime {
         if (answer2.equals(checker2)) {
             System.out.println("Correct!");
         } else {
-            System.out.println("'" + answer2 + "'" + " is wrong, correct answer is " + "'" + checker2 + "'");
+            System.out.println("'" + answer2 + "'" + " is wrong answer ;(. Correct answer was " + "'" + checker2 + "'");
+            System.out.println("Let's try again, " + userName + "!");
             System.exit(0);
         }
 
@@ -46,7 +48,8 @@ public class Prime {
             System.out.println("Correct!");
             System.out.println("Congratulations, " + userName + "!");
         } else {
-            System.out.println("'" + answer3 + "'" + " is wrong, correct answer is " + "'" + checker3 + "'");
+            System.out.println("'" + answer3 + "'" + " is wrong answer ;(. Correct answer was " + "'" + checker3 + "'");
+            System.out.println("Let's try again, " + userName + "!");
             System.exit(0);
         }
     }

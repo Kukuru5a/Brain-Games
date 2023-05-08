@@ -9,9 +9,7 @@ public class Progression {
     static Scanner scanner = new Scanner(System.in);
     public static String TASK = "What number is missing in the progression?";
     public static void getProgression() {
-        //генерируем прогрессию
         String progression = progression();
-        //модифицируем ее, заменяя рандомное число на '..'
         var modifiedProg = missingElement(progression, index1);
 
         System.out.println(TASK);
@@ -24,8 +22,8 @@ public class Progression {
         if (Integer.toString(answer).equals(splitProg[index1].trim())) {
             System.out.println("Correct!");
         } else {
-            System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + splitProg[index1].trim() + "'");
-            System.out.println("Let's try again, " + userName);
+            System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + splitProg[index1].trim() + "'.");
+            System.out.println("Let's try again, " + userName + "!");
             System.exit(0);
         }
 
@@ -41,8 +39,8 @@ public class Progression {
         if (Integer.toString(answer2).equals(splitProg2[index2].trim())) {
             System.out.println("Correct!");
         } else {
-            System.out.println("'" + answer2 + "'" + " is wrong answer ;(. Correct answer was " + "'" + splitProg2[index2].trim() + "'");
-            System.out.println("Let's try again, " + userName);
+            System.out.println("'" + answer2 + "'" + " is wrong answer ;(. Correct answer was " + "'" + splitProg2[index2].trim() + "'.");
+            System.out.println("Let's try again, " + userName + "!");
             System.exit(0);
         }
 
@@ -59,8 +57,8 @@ public class Progression {
             System.out.println("Correct!");
             System.out.println("Congratulations, " + userName + "!");
         } else {
-            System.out.println("'" + answer3 + "'" + " is wrong answer ;(. Correct answer was " + "'" + splitProg3[index3].trim() + "'");
-            System.out.println("Let's try again, " + userName);
+            System.out.println("'" + answer3 + "'" + " is wrong answer ;(. Correct answer was " + "'" + splitProg3[index3].trim() + "'.");
+            System.out.println("Let's try again, " + userName + "!");
             System.exit(0);
         }
     }

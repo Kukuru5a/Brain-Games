@@ -6,7 +6,7 @@ import java.util.Random;
 public class Utils {
     public static int numGenerator() {
         Random ranNum = new Random();
-        return ranNum.nextInt(0, 4);
+        return ranNum.nextInt(0, 3);
     }
     public static int randonIntNum() {
         Random ranNum = new Random();
@@ -17,8 +17,7 @@ public class Utils {
         var a = "+";
         var b = "-";
         var c = "*";
-        var d = "/";
-        String[] expressions = {a, b, c, d};
+        String[] expressions = {a, b, c};
         for (int i = 0; i < expressions.length; i++) {
             var expressionIndex = numGenerator();
             res = expressions[expressionIndex];
