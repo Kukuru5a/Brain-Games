@@ -12,13 +12,13 @@ public class EvenGame {
 
     public static void evenGame() {
         System.out.println(TASK);
-        System.out.println("Question:" + num1);
+        System.out.println("Question: " + num1);
         System.out.print("Your answer: ");
         var answer = scanner.next();
 
         if ((answer.equals(checker1))) {
             System.out.println("Correct!");
-            System.out.println("Question:" + num2);
+            System.out.println("Question: " + num2);
         }
         if (!(answer.equals(checker1))) {
             System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + checker1 + "'.");
@@ -31,7 +31,7 @@ public class EvenGame {
 
         if (answer2.equals(checker2)) {
             System.out.println("Correct!");
-            System.out.println("Question:" + num3);
+            System.out.println("Question: " + num3);
         }
         if (!(answer2.equals(checker2))) {
             System.out.println("'" + answer2 + "'" + " is wrong answer ;(. Correct answer was " + "'" + checker2 + "'.");
