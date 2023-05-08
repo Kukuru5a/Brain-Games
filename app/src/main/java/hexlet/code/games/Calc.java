@@ -19,7 +19,6 @@ public class Calc {
         if (answer.equals(String.valueOf(getExpression1))) {
             System.out.println("Correct!");
         }
-
         if (!(answer.equals(String.valueOf(getExpression1)))) {
             System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + getExpression1 + "'");
             System.out.println("Let's try again, " + userName);
@@ -33,7 +32,6 @@ public class Calc {
         if (answer2.equals(String.valueOf(getExpression2))) {
             System.out.println("Correct!");
         }
-
         if (!(answer2.equals(String.valueOf(getExpression2)))) {
             System.out.println("'" + answer2 + "'" + " is wrong answer ;(. Correct answer was " + "'" + getExpression2 + "'");
             System.out.println("Let's try again, " + userName);
@@ -48,7 +46,6 @@ public class Calc {
             System.out.println("Correct!");
             System.out.println("Congratulations, " + userName + "!");
         }
-
         if (!(answer3.equals(String.valueOf(getExpression3)))) {
             System.out.println("'" + answer3 + "'" + " is wrong answer ;(. Correct answer was " + "'" + getExpression3 + "'");
             System.out.println("Let's try again, " + userName);

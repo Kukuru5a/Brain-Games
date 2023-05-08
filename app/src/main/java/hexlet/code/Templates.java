@@ -29,7 +29,6 @@ public class Templates {
     public static int gcd3 = gcd(nums3[0], nums3[1]);
 
     //for progression
-
     public static int index1 = (int)(Math.random()*10);
     public static int index2 = (int)(Math.random()*10);
     public static int index3 = (int)(Math.random()*10);

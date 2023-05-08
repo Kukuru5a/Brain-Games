@@ -22,7 +22,7 @@ test {
     useJUnitPlatform()
 }
 compileJava{
-    options.release = 18;
+    options.release = 17;
 }
 run {
     standardInput = System.in

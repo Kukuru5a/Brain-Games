@@ -3,8 +3,6 @@ package hexlet.code;
 import hexlet.code.games.*;
 
 import java.util.Scanner;
-
-// основа, на которой будут работать все игры
 public class Engine {
     // элементы игры
     static Scanner scanner = new Scanner(System.in);
@@ -17,14 +15,12 @@ public class Engine {
         System.out.print("Your choice: ");
         var numChoice = scanner.next();
 
-
         if (numChoice.equals("1")) {
             System.out.print("Can I have your name? ");
             userName = scanner.next();
             System.out.println("Hello, " + userName + "!");
             scanner.close();
         }
-
         if (numChoice.equals("2")) {
             System.out.print("Can I have your name? ");
             userName = scanner.next();
@@ -32,7 +28,6 @@ public class Engine {
             EvenGame.evenGame();
             scanner.close();
         }
-
         if (numChoice.equals("3")) {
             System.out.print("Can I have your name? ");
             userName = scanner.next();
@@ -40,7 +35,6 @@ public class Engine {
             Calc.calculator();
             scanner.close();
         }
-
         if (numChoice.equals("4")) {
             System.out.print("Can I have your name? ");
             userName = scanner.next();
@@ -48,7 +42,6 @@ public class Engine {
             GCD.getGCD();
             scanner.close();
         }
-
         if (numChoice.equals("5")) {
             System.out.print("Can I have your name? ");
             userName = scanner.next();
@@ -56,7 +49,6 @@ public class Engine {
             Progression.getProgression();
             scanner.close();
         }
-
         if (numChoice.equals("6")) {
             System.out.print("Can I have your name? ");
             userName = scanner.next();

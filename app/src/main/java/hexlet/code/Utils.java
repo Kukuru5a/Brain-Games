@@ -8,12 +8,10 @@ public class Utils {
         Random ranNum = new Random();
         return ranNum.nextInt(0, 4);
     }
-
     public static int randonIntNum() {
         Random ranNum = new Random();
         return ranNum.nextInt(1, 100);
     }
-
     public static String expression() {
         String res = "";
         var a = "+";
@@ -27,7 +25,6 @@ public class Utils {
         }
         return res;
     }
-
     public static int getExpression(int num1, int num2, String expression){
 
         return switch (expression) {
@@ -59,7 +56,6 @@ public class Utils {
         }
         return res;
     }
-
     public static int gcd(int a, int b) {
         int res = 0;
         int i = 0;
@@ -71,7 +67,6 @@ public class Utils {
         }
         return res;
     }
-
     public static String isEven (int n) {
         String res;
         if (n % 2 == 0) {
@@ -81,7 +76,6 @@ public class Utils {
         }
         return res;
     }
-
     //progression generator
     public static String progression() {
         int diff = randonIntNum();
@@ -94,12 +88,10 @@ public class Utils {
         var str = Arrays.toString(elements);
         return str.substring(4,str.length()-1);
     }
-
     public static String missingElement(String prog, int index) {
         String[] splitStr = prog.split(",");
         splitStr[index] = "..";
         var res = Arrays.toString(splitStr);
         return res.trim().substring(1, res.length()-1).replace(',', ' ');
     }
-
 }
