@@ -84,13 +84,13 @@ public class Utils {
         for (int i = 1; i < n; i++) {
             elements[i] = start + diff * i;// i - element of progression
         }
-        var str = Arrays.toString(elements);
-        return str.substring(4,str.length()-1);
+        String str = Arrays.toString(elements);
+        return str.substring(4,str.length()-1).trim();
     }
     public static String missingElement(String prog, int index) {
         String[] splitStr = prog.split(",");
         splitStr[index] = "..";
-        var res = Arrays.toString(splitStr);
-        return res.trim().substring(1, res.length()-1).replace(',', ' ');
+        String res = Arrays.toString(splitStr);
+        return res.substring(1, res.length()-1).trim().replace(" ", "").replace(",", " ");
     }
 }
