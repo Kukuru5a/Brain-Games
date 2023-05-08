@@ -24,6 +24,8 @@
 </body>
 </html>
 
+link to another test (in case if script doesn't work): https://asciinema.org/a/6BACPIPobNCxW74LlRLOJbaDo
+
 # Calc game
 
 <!DOCTYPE html>
@@ -43,6 +45,8 @@
   </script>
 </body>
 </html>
+
+link to another test (in case if script doesn't work): https://asciinema.org/a/Ql3tuNG5Da8EKaRbVY2vJr5ta
 
 # GCD game
 
@@ -64,6 +68,8 @@
 </body>
 </html>
 
+link to another test (in case if script doesn't work): https://asciinema.org/a/uBRbBP9s0spcbcGeIxlOI4OTe
+
 # Progression game
 
 <!DOCTYPE html>
@@ -84,6 +90,7 @@
 </body>
 </html>
 
+link (in case id script doesn't work): https://asciinema.org/a/MujV70pEHc2aCmUF5aXgPItAM
 
 # Prime game + full game observe
 
@@ -104,3 +111,5 @@
   </script>
 </body>
 </html>
+
+link for additional test: https://asciinema.org/a/hDm3UimVgNfiSrPMiVqKOLq9b
