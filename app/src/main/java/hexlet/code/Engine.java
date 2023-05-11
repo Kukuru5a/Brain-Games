@@ -1,60 +1,36 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
-
 import java.util.Scanner;
+
 public class Engine {
-    // элементы игры
-    static Scanner scanner = new Scanner(System.in);
-    public static String userName;
+    public static final int WIN_POINTS = 3;
+    public static final int QUESTION = 0;
+    public static final int ANSWER = 1;
 
-    // введение в игру
-    public static void runEngine() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("Please enter the game number and press Enter. \n 1 - Greet \n 2 - Even \n 3 - Calc \n 4 - GCD \n 5 - Progression \n 6 - Prime \n 0 - Exit");
-        System.out.print("Your choice: ");
-        var numChoice = scanner.next();
+    public static void run(String[][] gameData, String gameDescription) {
+        int index = 0;
+        String answer;
+        Scanner sc = new Scanner(System.in);
 
-        if (numChoice.equals("1")) {
-            System.out.print("May I have your name? ");
-            userName = scanner.next();
-            System.out.println("Hello, " + userName + "!");
-            scanner.close();
+        System.out.print("Welcome to the Brain Games! \nMay I have your name? ");
+        String userName = sc.next();
+        System.out.println("Hello " + userName + "!");
+        System.out.println(gameDescription);
+        while (index < WIN_POINTS) {
+            System.out.println("Question: " + gameData[index][QUESTION]);
+            System.out.print("Your answer: ");
+            answer = sc.next();
+            if (answer.equals(gameData[index][ANSWER])) {
+                System.out.println("Correct!");
+                index++;
+            } else {
+                System.out.println("'" + answer + "' is wrong answer ;(. "
+                        + "Correct answer is '" + gameData[index][ANSWER] + "'.");
+                System.out.println("Let's try again " + userName + "!");
+                sc.close();
+                return;
+            }
         }
-        if (numChoice.equals("2")) {
-            System.out.print("May I have your name? ");
-            userName = scanner.next();
-            System.out.println("Hello, " + userName + "!");
-            EvenGame.evenGame();
-            scanner.close();
-        }
-        if (numChoice.equals("3")) {
-            System.out.print("May I have your name? ");
-            userName = scanner.next();
-            System.out.println("Hello, " + userName + "!");
-            Calc.calculator();
-            scanner.close();
-        }
-        if (numChoice.equals("4")) {
-            System.out.print("May I have your name? ");
-            userName = scanner.next();
-            System.out.println("Hello, " + userName + "!");
-            GCD.getGCD();
-            scanner.close();
-        }
-        if (numChoice.equals("5")) {
-            System.out.print("May I have your name? ");
-            userName = scanner.next();
-            System.out.println("Hello, " + userName + "!");
-            Progression.getProgression();
-            scanner.close();
-        }
-        if (numChoice.equals("6")) {
-            System.out.print("May I have your name? ");
-            userName = scanner.next();
-            System.out.println("Hello, " + userName + "!");
-            Prime.isPrime();
-            scanner.close();
-        }
+        System.out.println("Congratulation " + userName + "!");
     }
 }

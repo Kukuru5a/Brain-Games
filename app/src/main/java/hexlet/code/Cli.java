@@ -3,15 +3,12 @@ import java.util.Scanner;
 
 
 public class Cli {
-    public static void gameStart() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("Can I have your name?");
-        var userName = scanner.next();
+    public static void playerWelcome() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Can I have your name? ");
+        var userName = sc.next();
         System.out.print("Hello, " + userName + "!");
-
-        scanner.close();
+        sc.close();
     }
 
 }

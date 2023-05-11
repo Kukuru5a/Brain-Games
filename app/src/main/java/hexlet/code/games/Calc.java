@@ -1,55 +1,35 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
+import hexlet.code.Engine;
 
-import static hexlet.code.Engine.userName;
-import static hexlet.code.Templates.*;
+import java.util.Random;
 
+import static hexlet.code.Engine.WIN_POINTS;
+import static hexlet.code.Engine.ANSWER;
+import static hexlet.code.Engine.QUESTION;
 
 public class Calc {
+    private static final Random RANDOM = new Random();
+    public static String gameDescription = "What is the result of the expression?";
+    private static final String[] EXPRESSION_LIST = {"+", "-", "*"};
 
-    public static Scanner scanner = new Scanner(System.in);
-    public static String TASK = "What is the result of the expression?";
+    public static int expression(int num1, int num2, String operator) {
+        return switch (operator) {
+            case "+" -> num1 + num2;
+            case "-" -> num1 - num2;
+            case "*" -> num1 * num2;
+            default -> throw new RuntimeException("Unexpected operator");
+        };
+    }
+
     public static void calculator() {
-        System.out.println(TASK);
-        System.out.println("Question: " + nums1[0] + " " + expression1 + " " + nums1[1]);
-        System.out.print("Your answer: ");
-        var answer = scanner.next();
-
-        if (answer.equals(String.valueOf(getExpression1))) {
-            System.out.println("Correct!");
+        String[][] gameData = new String[WIN_POINTS][2];
+        for (int i = 0; i < gameData.length; i++) {
+            int randomNumber = RANDOM.nextInt(100);
+            int randomNumber2 = RANDOM.nextInt(100);
+            gameData[i][QUESTION] = randomNumber + " " + EXPRESSION_LIST[i] + " " + randomNumber2;
+            gameData[i][ANSWER] = Integer.toString(expression(randomNumber, randomNumber2, EXPRESSION_LIST[i]));
         }
-        if (!(answer.equals(String.valueOf(getExpression1)))) {
-            System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + getExpression1 + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-            System.exit(0);
-        }
-
-        System.out.println("Question: " + nums2[0] + " " + expression2 + " " + nums2[1]);
-        System.out.print("Your answer: ");
-        var answer2 = scanner.next();
-
-        if (answer2.equals(String.valueOf(getExpression2))) {
-            System.out.println("Correct!");
-        }
-        if (!(answer2.equals(String.valueOf(getExpression2)))) {
-            System.out.println("'" + answer2 + "'" + " is wrong answer ;(. Correct answer was " + "'" + getExpression2 + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-            System.exit(0);
-        }
-
-        System.out.println("Question: " + nums3[0] + " " + expression3 + " " + nums3[1]);
-        System.out.print("Your answer: ");
-        var answer3 = scanner.next();
-
-        if (answer3.equals(String.valueOf(getExpression3))) {
-            System.out.println("Correct!");
-            System.out.println("Congratulations, " + userName + "!");
-        }
-        if (!(answer3.equals(String.valueOf(getExpression3)))) {
-            System.out.println("'" + answer3 + "'" + " is wrong answer ;(. Correct answer was " + "'" + getExpression3 + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-            System.exit(0);
-        }
+        Engine.run(gameData, gameDescription);
     }
 }

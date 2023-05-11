@@ -1,56 +1,45 @@
 package hexlet.code.games;
 
-import hexlet.code.Utils;
+import hexlet.code.Engine;
 
-import static hexlet.code.Engine.userName;
-import static hexlet.code.games.Calc.scanner;
-import static hexlet.code.Templates.*;
+import java.util.Random;
+
+import static hexlet.code.Engine.WIN_POINTS;
+import static hexlet.code.Engine.ANSWER;
+import static hexlet.code.Engine.QUESTION;
 
 public class Prime {
-    static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static final Random RANDOM = new Random();
+    static final String GAME_DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
+    public static String isPrime(int num) {
+        String res = "";
+        int flag = 0;
+        int m = num / 2;
+        if (num == 0 || num == 1) {
+            res = "no";
+        } else {
+            for (int i = 2; i < m; i++) {
+                if (num % i == 0) {
+                    res = "no";
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 0) {
+                res = "yes";
+            }
+        }
+        return res;
+    }
+
     public static void isPrime() {
-        System.out.println(TASK);
-        System.out.println("Question: " + num1);
-        System.out.print("Your answer: ");
-        var answer1 = scanner.next();
-
-        var checker = Utils.isPrime(num1);
-
-        if (answer1.equals(checker)) {
-            System.out.println("Correct!");
-        } else {
-            System.out.println("'" + answer1 + "'" + " is wrong answer ;(. Correct answer was " + "'" + checker + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-            System.exit(0);
+        String[][] gameData = new String[WIN_POINTS][2];
+        for (int i = 0; i < gameData.length; i++) {
+            int randomNumber = RANDOM.nextInt(100);
+            gameData[i][QUESTION] = Integer.toString(randomNumber);
+            gameData[i][ANSWER] = isPrime(randomNumber);
         }
-
-        System.out.println("Question: " + num2);
-        System.out.print("Your answer: ");
-        var answer2 = scanner.next();
-
-        var checker2 = Utils.isPrime(num2);
-
-        if (answer2.equals(checker2)) {
-            System.out.println("Correct!");
-        } else {
-            System.out.println("'" + answer2 + "'" + " is wrong answer ;(. Correct answer was " + "'" + checker2 + "'");
-            System.out.println("Let's try again, " + userName + "!");
-            System.exit(0);
-        }
-
-        System.out.println("Question: " + num3);
-        System.out.print("Your answer: ");
-        var answer3 = scanner.next();
-
-        var checker3 = Utils.isPrime(num3);
-
-        if (answer3.equals(checker3)) {
-            System.out.println("Correct!");
-            System.out.println("Congratulations, " + userName + "!");
-        } else {
-            System.out.println("'" + answer3 + "'" + " is wrong answer ;(. Correct answer was " + "'" + checker3 + "'");
-            System.out.println("Let's try again, " + userName + "!");
-            System.exit(0);
-        }
+        Engine.run(gameData, GAME_DESCRIPTION);
     }
 }

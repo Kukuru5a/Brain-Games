@@ -1,55 +1,28 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
+import hexlet.code.Engine;
 
-import static hexlet.code.Engine.userName;
-import static hexlet.code.Templates.*;
+import java.util.Random;
+
+import static hexlet.code.Engine.WIN_POINTS;
+import static hexlet.code.Engine.ANSWER;
+import static hexlet.code.Engine.QUESTION;
 
 public class EvenGame {
+    private static final Random RANDOM = new Random();
+    public static String gameDescription = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-    public static Scanner scanner = new Scanner(System.in);
-    public static String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static boolean isEven(int num) {
+        return (num % 2 == 0);
+    }
 
     public static void evenGame() {
-        System.out.println(TASK);
-        System.out.println("Question: " + num1);
-        System.out.print("Your answer: ");
-        var answer = scanner.next();
-
-        if ((answer.equals(checker1))) {
-            System.out.println("Correct!");
-            System.out.println("Question: " + num2);
+        String[][] gameData = new String[WIN_POINTS][2];
+        for (int i = 0; i < gameData.length; i++) {
+            int randomNumber = RANDOM.nextInt(100);
+            gameData[i][QUESTION] = Integer.toString(randomNumber);
+            gameData[i][ANSWER] = isEven(randomNumber) ? "yes" : "no";
         }
-        if (!(answer.equals(checker1))) {
-            System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + checker1 + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-            System.exit(0);
-        }
-
-        System.out.print("Your answer: ");
-        var answer2 = scanner.next();
-
-        if (answer2.equals(checker2)) {
-            System.out.println("Correct!");
-            System.out.println("Question: " + num3);
-        }
-        if (!(answer2.equals(checker2))) {
-            System.out.println("'" + answer2 + "'" + " is wrong answer ;(. Correct answer was " + "'" + checker2 + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-            System.exit(0);
-        }
-
-        System.out.print("Your answer: ");
-        var answer3 = scanner.next();
-
-        if (answer3.equals(checker3)) {
-            System.out.println("Correct!");
-            System.out.println("Congratulations, " + userName + "!");
-        }
-        if (!(answer3.equals(checker3))) {
-            System.out.println("'" + answer3 + "'" + " is wrong answer ;(. Correct answer was " + "'" + checker3 + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-            System.exit(0);
-        }
+        Engine.run(gameData, gameDescription);
     }
 }

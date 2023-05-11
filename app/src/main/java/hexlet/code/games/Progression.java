@@ -1,59 +1,50 @@
 package hexlet.code.games;
-import java.util.Scanner;
-import static hexlet.code.Engine.userName;
-import static hexlet.code.Templates.*;
-import static hexlet.code.Utils.*;
+
+import hexlet.code.Engine;
+
+import java.util.Arrays;
+import java.util.Random;
+
+import static hexlet.code.Engine.WIN_POINTS;
+import static hexlet.code.Engine.ANSWER;
+import static hexlet.code.Engine.QUESTION;
 
 public class Progression {
+    private static final Random RANDOM = new Random();
+    public static String gameDescription = "What number is missing in the progression?";
 
-    static Scanner scanner = new Scanner(System.in);
-    public static String TASK = "What number is missing in the progression?";
+    public static String progression() {
+        int diff = RANDOM.nextInt(100);
+        int start = RANDOM.nextInt(100); //start num
+        int n = 11;
+        int[] elements = new int[n];
+        for (int i = 1; i < n; i++) {
+            elements[i] = start + diff * i; // i - element of progression
+        }
+        String str = Arrays.toString(elements);
+        return str.substring(4, str.length() - 1).trim();
+    }
+
+    public static String[] progressionToArray(String progression) {
+        return progression.split(",");
+    }
+
+    public static String missingElement(String progression, int index) {
+        String[] splitStr = progression.split(",");
+        splitStr[index] = "..";
+        String res = Arrays.toString(splitStr);
+        return res.substring(1, res.length() - 1).trim().replace(" ", "").replace(",", " ");
+    }
+
     public static void getProgression() {
-        String progression = progression();
-        var modifiedProg = missingElement(progression, index1);
-
-        System.out.println(TASK);
-        System.out.println("Question: " + modifiedProg.trim());
-        System.out.print("Your answer: ");
-        int answer = scanner.nextInt();
-        String[] splitProgression = progression.split(",");
-
-        if (Integer.toString(answer).equals(splitProgression[index1].trim())) {
-            System.out.println("Correct!");
-        } else {
-            System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + splitProgression[index1].trim() + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-            System.exit(0);
+        String[][] gameData = new String[WIN_POINTS][2];
+        for (int i = 0; i < gameData.length; i++) {
+            var progression = progression();
+            var progressions = progressionToArray(progression);
+            int index = RANDOM.nextInt(9);
+            gameData[i][QUESTION] = missingElement(progression, index);
+            gameData[i][ANSWER] = progressions[index].trim();
         }
-        String progression2 = progression();
-        var modifiedProg2 = missingElement(progression2, index2);
-        String[] splitProgression2 = progression2.split(",");
-
-        System.out.println("Question: " + modifiedProg2.trim());
-        System.out.print("Your answer: ");
-        var answer2 = scanner.nextInt();
-
-        if (Integer.toString(answer2).equals(splitProgression2[index2].trim())) {
-            System.out.println("Correct!");
-        } else {
-            System.out.println("'" + answer2 + "'" + " is wrong answer ;(. Correct answer was " + "'" + splitProgression2[index2].trim() + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-            System.exit(0);
-        }
-        var progression3 = progression();
-        var modifiedProg3 = missingElement(progression3, index3);
-        String[] splitProgression3 = progression3.split(",");
-        System.out.println("Question: " + modifiedProg3.trim());
-        System.out.print("Your answer: ");
-        var answer3 = scanner.nextInt();
-
-        if (Integer.toString(answer3).equals(splitProgression3[index3].trim())) {
-            System.out.println("Correct!");
-            System.out.println("Congratulations, " + userName + "!");
-        } else {
-            System.out.println("'" + answer3 + "'" + " is wrong answer ;(. Correct answer was " + "'" + splitProgression3[index3].trim() + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-            System.exit(0);
-        }
+        Engine.run(gameData, gameDescription);
     }
 }
