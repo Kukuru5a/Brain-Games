@@ -14,7 +14,7 @@ public class Engine {
 
         System.out.print("Welcome to the Brain Games! \nMay I have your name? ");
         String userName = sc.next();
-        System.out.println("Hello " + userName + "!");
+        System.out.println("Hello, " + userName + "!");
         System.out.println(gameDescription);
         while (index < WIN_POINTS) {
             System.out.println("Question: " + gameData[index][QUESTION]);
