@@ -11,18 +11,23 @@ import static hexlet.code.Engine.QUESTION;
 
 public class Progression {
     private static final Random RANDOM = new Random();
-    public static String gameDescription = "What number is missing in the progression?";
+    private static final String gameDescription = "What number is missing in the progression?";
+
+    private static final int MAX_NUM = 100;
+    private static final int INDEX = 9;
+    private static final int STRING_START = 4;
+    private static final int PROGRESSION_LENGTH = 11;
 
     public static String progression() {
-        int diff = RANDOM.nextInt(100);
-        int start = RANDOM.nextInt(100); //start num
-        int n = 11;
+        int diff = RANDOM.nextInt(MAX_NUM);
+        int start = RANDOM.nextInt(MAX_NUM); //start num
+        int n = PROGRESSION_LENGTH;
         int[] elements = new int[n];
         for (int i = 1; i < n; i++) {
             elements[i] = start + diff * i; // i - element of progression
         }
         String str = Arrays.toString(elements);
-        return str.substring(4, str.length() - 1).trim();
+        return str.substring(STRING_START, str.length() - 1).trim();
     }
 
     public static String[] progressionToArray(String progression) {
@@ -41,7 +46,7 @@ public class Progression {
         for (int i = 0; i < gameData.length; i++) {
             var progression = progression();
             var progressions = progressionToArray(progression);
-            int index = RANDOM.nextInt(9);
+            int index = RANDOM.nextInt(INDEX);
             gameData[i][QUESTION] = missingElement(progression, index);
             gameData[i][ANSWER] = progressions[index].trim();
         }

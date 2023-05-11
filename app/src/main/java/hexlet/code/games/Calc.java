@@ -10,7 +10,8 @@ import static hexlet.code.Engine.QUESTION;
 
 public class Calc {
     private static final Random RANDOM = new Random();
-    public static String gameDescription = "What is the result of the expression?";
+    private static final String gameDescription = "What is the result of the expression?";
+    private static final int MAX_NUM = 100;
     private static final String[] EXPRESSION_LIST = {"+", "-", "*"};
 
     public static int expression(int num1, int num2, String operator) {
@@ -25,8 +26,8 @@ public class Calc {
     public static void calculator() {
         String[][] gameData = new String[WIN_POINTS][2];
         for (int i = 0; i < gameData.length; i++) {
-            int randomNumber = RANDOM.nextInt(100);
-            int randomNumber2 = RANDOM.nextInt(100);
+            int randomNumber = RANDOM.nextInt(MAX_NUM);
+            int randomNumber2 = RANDOM.nextInt(MAX_NUM);
             gameData[i][QUESTION] = randomNumber + " " + EXPRESSION_LIST[i] + " " + randomNumber2;
             gameData[i][ANSWER] = Integer.toString(expression(randomNumber, randomNumber2, EXPRESSION_LIST[i]));
         }

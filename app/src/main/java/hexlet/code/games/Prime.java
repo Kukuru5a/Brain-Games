@@ -12,6 +12,8 @@ public class Prime {
     private static final Random RANDOM = new Random();
     static final String GAME_DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
+    private static final int MAX_NUM = 100;
+
     public static String isPrime(int num) {
         String res = "";
         int flag = 0;
@@ -36,7 +38,7 @@ public class Prime {
     public static void isPrime() {
         String[][] gameData = new String[WIN_POINTS][2];
         for (int i = 0; i < gameData.length; i++) {
-            int randomNumber = RANDOM.nextInt(100);
+            int randomNumber = RANDOM.nextInt(MAX_NUM);
             gameData[i][QUESTION] = Integer.toString(randomNumber);
             gameData[i][ANSWER] = isPrime(randomNumber);
         }
