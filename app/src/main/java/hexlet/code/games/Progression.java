@@ -11,7 +11,7 @@ import static hexlet.code.Engine.QUESTION;
 
 public class Progression {
     private static final Random RANDOM = new Random();
-    private static final String gameDescription = "What number is missing in the progression?";
+    private static final String GAME_DESCRIPTION = "What number is missing in the progression?";
 
     private static final int MAX_NUM = 100;
     private static final int INDEX = 9;
@@ -50,6 +50,6 @@ public class Progression {
             gameData[i][QUESTION] = missingElement(progression, index);
             gameData[i][ANSWER] = progressions[index].trim();
         }
-        Engine.run(gameData, gameDescription);
+        Engine.run(gameData, GAME_DESCRIPTION);
     }
 }

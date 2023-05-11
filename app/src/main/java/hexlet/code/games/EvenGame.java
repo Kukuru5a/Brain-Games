@@ -10,7 +10,7 @@ import static hexlet.code.Engine.QUESTION;
 
 public class EvenGame {
     private static final Random RANDOM = new Random();
-    private static final String gameDescription = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final String GAME_DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     private static final int MAX_NUM = 100;
 
@@ -25,6 +25,6 @@ public class EvenGame {
             gameData[i][QUESTION] = Integer.toString(randomNumber);
             gameData[i][ANSWER] = isEven(randomNumber) ? "yes" : "no";
         }
-        Engine.run(gameData, gameDescription);
+        Engine.run(gameData, GAME_DESCRIPTION);
     }
 }
