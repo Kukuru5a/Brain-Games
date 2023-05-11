@@ -26,7 +26,7 @@ public class Engine {
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. "
                         + "Correct answer is '" + gameData[index][ANSWER] + "'.");
-                System.out.println("Let's try again " + userName + "!");
+                System.out.println("Let's try again, " + userName + "!");
                 sc.close();
                 return;
             }
