@@ -3,52 +3,43 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import java.util.Arrays;
-import java.util.Random;
 
-import static hexlet.code.Engine.WIN_POINTS;
+import static hexlet.code.Engine.ROUNDS_COUNT;
 import static hexlet.code.Engine.ANSWER;
 import static hexlet.code.Engine.QUESTION;
 
 public class Progression {
-    private static final Random RANDOM = new Random();
     private static final String GAME_DESCRIPTION = "What number is missing in the progression?";
-
-    private static final int MAX_NUM = 100;
+    private static final int MAX = 100;
     private static final int INDEX = 9;
-    private static final int STRING_START = 4;
-    private static final int PROGRESSION_LENGTH = 11;
+    private static final int PROGRESSION_LENGTH = 10;
 
-    public static String progression() {
-        int diff = RANDOM.nextInt(MAX_NUM);
-        int start = RANDOM.nextInt(MAX_NUM); //start num
-        int n = PROGRESSION_LENGTH;
-        int[] elements = new int[n];
-        for (int i = 1; i < n; i++) {
-            elements[i] = start + diff * i; // i - element of progression
+    public static String[] getProgression(int start, int step, int length) {
+        int[] elements = new int[length];
+        for (int i = 0; i < length; i++) {
+            elements[i] = start + step * i;
         }
-        String str = Arrays.toString(elements);
-        return str.substring(STRING_START, str.length() - 1).trim();
+        var res = Arrays.toString(elements).replace("[", "")
+                .replace("]", "")
+                .replace(" ", "");
+        return res.split(",");
     }
 
-    public static String[] progressionToArray(String progression) {
-        return progression.split(",");
+    public static String missingStatement(String[] progs, int index) {
+        String[] modProg = progs.clone();
+        modProg[index] = "..";
+        return Arrays.toString(modProg).replace("[", "")
+                .replace("]", "")
+                .replace(",", "");
     }
 
-    public static String missingElement(String progression, int index) {
-        String[] splitStr = progression.split(",");
-        splitStr[index] = "..";
-        String res = Arrays.toString(splitStr);
-        return res.substring(1, res.length() - 1).trim().replace(" ", "").replace(",", " ");
-    }
-
-    public static void getProgression() {
-        String[][] gameData = new String[WIN_POINTS][2];
+    public static void runGame() {
+        String[][] gameData = new String[ROUNDS_COUNT][2];
         for (int i = 0; i < gameData.length; i++) {
-            var progression = progression();
-            var progressions = progressionToArray(progression);
-            int index = RANDOM.nextInt(INDEX);
-            gameData[i][QUESTION] = missingElement(progression, index);
-            gameData[i][ANSWER] = progressions[index].trim();
+            int index = Utils.randomNumber(INDEX);
+            var progression = getProgression(Utils.randomNumber(MAX), Utils.randomNumber(MAX), PROGRESSION_LENGTH);
+            gameData[i][QUESTION] = missingStatement(progression, index);
+            gameData[i][ANSWER] = progression[index];
         }
         Engine.run(gameData, GAME_DESCRIPTION);
     }
