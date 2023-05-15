@@ -2,8 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.ANSWER;
-import static hexlet.code.Engine.QUESTION;
 import static hexlet.code.Engine.ROUNDS_COUNT;
 
 public class EvenGame {
@@ -13,12 +11,18 @@ public class EvenGame {
         return (num % 2 == 0);
     }
 
+    public static String[] generateRound() {
+        String[] res = new String[2];
+        int randomNumber = Utils.getRandomNumber();
+        res[0] = Integer.toString(randomNumber);
+        res[1] = isEven(randomNumber) ? "yes" : "no";
+        return res;
+    }
+
     public static void runGame() {
         String[][] gameData = new String[ROUNDS_COUNT][2];
         for (int i = 0; i < gameData.length; i++) {
-            int randomNumber = Utils.randomNumber();
-            gameData[i][QUESTION] = Integer.toString(randomNumber);
-            gameData[i][ANSWER] = isEven(randomNumber) ? "yes" : "no";
+            gameData[i] = generateRound();
         }
         Engine.run(gameData, GAME_DESCRIPTION);
     }

@@ -3,14 +3,13 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import static hexlet.code.Engine.ROUNDS_COUNT;
-import static hexlet.code.Engine.ANSWER;
-import static hexlet.code.Engine.QUESTION;
 
 public class Calc {
     private static final String GAME_DESCRIPTION = "What is the result of the expression?";
     private static final String[] EXPRESSION_LIST = {"+", "-", "*"};
+    private static final int EXPRESSION_COUNT = 3;
 
-    public static int expression(int num1, int num2, String operator) {
+    public static int getExpression(int num1, int num2, String operator) {
         return switch (operator) {
             case "+" -> num1 + num2;
             case "-" -> num1 - num2;
@@ -19,13 +18,20 @@ public class Calc {
         };
     }
 
+    public static String[] generateRound() {
+        String[] res = new String[2];
+        int randomNumber = Utils.getRandomNumber();
+        int randomNumber2 = Utils.getRandomNumber();
+        String expression = EXPRESSION_LIST[Utils.getRandomNumber(EXPRESSION_COUNT)];
+        res[0] = randomNumber + " " + expression + " " + randomNumber2;
+        res[1] = Integer.toString(getExpression(randomNumber, randomNumber2, expression));
+        return res;
+    }
+
     public static void runGame() {
         String[][] gameData = new String[ROUNDS_COUNT][2];
         for (int i = 0; i < gameData.length; i++) {
-            int randomNumber = Utils.randomNumber();
-            int randomNumber2 = Utils.randomNumber();
-            gameData[i][QUESTION] = randomNumber + " " + EXPRESSION_LIST[i] + " " + randomNumber2;
-            gameData[i][ANSWER] = Integer.toString(expression(randomNumber, randomNumber2, EXPRESSION_LIST[i]));
+            gameData[i] = generateRound();
         }
         Engine.run(gameData, GAME_DESCRIPTION);
     }

@@ -6,11 +6,11 @@ public class Utils {
     private static final Random RANDOM = new Random();
     private static final int MAX = 100;
 
-    public static int randomNumber(int number) {
+    public static int getRandomNumber(int number) {
         return RANDOM.nextInt(number);
     }
 
-    public static int randomNumber() {
+    public static int getRandomNumber() {
         return RANDOM.nextInt(MAX);
     }
 }
